@@ -1,0 +1,40 @@
+{
+  "products": [
+    {
+      "productId": "001",
+      "productName": "humbugger",
+      "productType": "humbugger",
+      "price": 120
+    },
+    {
+      "productId": "002",
+      "productName": "bacon lettuce humbugger",
+      "productType": "humbugger",
+      "price": 200
+    },
+    {
+      "productId": "003",
+      "productName": "cheese humbugger",
+      "productType": "humbugger",
+      "price": 150
+    },
+    {
+      "productId": "004",
+      "productName": "pork humbugger",
+      "productType": "humbugger",
+      "price": 200
+    },
+    {
+      "productId": "005",
+      "productName": "orange juice",
+      "productType": "drink",
+      "price": 100
+    },
+    {
+      "productId": "006",
+      "productName": "cola",
+      "productType": "drink",
+      "price": 100
+    }
+  ]
+}
