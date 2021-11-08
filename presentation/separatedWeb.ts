@@ -2,21 +2,25 @@
 // ドメイン処理で取得したデータを返すAPI
 
 import express, { Request, Response } from "express";
-import { ProductRepository } from "./ProductRepository";
-import { Product } from "./types";
+import { domain } from "../domain/domain";
+import { Product } from "../types";
 const app = express();
 
 app.get("/products", (req: Request, res: Response) => {
-  const repo = ProductRepository("./products.json");
+  const repo = domain("./products.json");
   const products: Product[] = repo.findAll();
   res.json(products);
 });
 app.get("/products/:id", (req: Request, res: Response) => {
   const id = req.params.id;
 
-  const repo = ProductRepository("./products.json");
+  const repo = domain("./products.json");
 
   const product = repo.findById(id);
+
+  if (!product) {
+    return res.json("404 Error");
+  }
   res.json(product);
 });
 

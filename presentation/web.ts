@@ -3,7 +3,7 @@
 
 import express, { Request, Response } from "express";
 import fs from "fs";
-import { Product } from "./types";
+import { Product } from "../types";
 const app = express();
 
 const data = JSON.parse(fs.readFileSync("./products.json", "utf-8")) || [];
@@ -17,6 +17,10 @@ app.get("/products/:id", (req: Request, res: Response) => {
   const id = req.params.id;
 
   const product = products.find((product) => product.productId === id);
+
+  if (!product) {
+    return res.json("404 Error");
+  }
   res.json(product);
 });
 

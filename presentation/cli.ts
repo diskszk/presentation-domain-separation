@@ -3,7 +3,7 @@
 
 import fs from "fs";
 import { argv } from "process";
-import { Product } from "./types";
+import { Product } from "../types";
 
 const data = JSON.parse(fs.readFileSync("./products.json", "utf-8"));
 const products: Product[] = data.products;
